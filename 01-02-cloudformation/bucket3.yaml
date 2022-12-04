@@ -1,0 +1,28 @@
+#Resources:
+  #S3Bucket:
+    #Type: 'AWS::S3::Bucket'
+    #Properties:
+      #BucketName: reza005
+
+#Parameters:
+ #BucketRef:
+  #Description: Bucket details
+  #Type: String
+  #Default: reza006
+
+#Resources:
+ #S3Bucket:
+  #Type: AWS::S3::Bucket
+  #Properties:
+   #BucketName: !Ref BucketRef
+
+Parameters:
+ BucketRef:
+  Description: Bucket details
+  Type: String
+
+Resources:
+ S3Bucket:
+  Type: AWS::S3::Bucket
+  Properties:
+   BucketName: !Ref BucketRef
